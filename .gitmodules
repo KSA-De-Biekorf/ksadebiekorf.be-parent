@@ -1,3 +1,7 @@
 [submodule "ksadebiekorf.be"]
 	path = "ksadebiekorf.be"
-	url = https://github.com/ksadebiekorf/ksadebiekorf.be
+	url = https://github.com/KSA-De-Biekorf/ksadebiekorf.be
+
+[submodule "ksadebiekorf.be-dist"]
+	path = "ksadebiekorf.be-dist"
+	url = https://github.com/KSA-De-Biekorf/ksadebiekorf.be-dist
