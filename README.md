@@ -7,22 +7,28 @@ script [build.sh](/publish.sh).
 
 # Website updaten
 
-1. Bouw de website
-
-```sh
-cd ./ksadebiekorf.be
-pnpn run build
-```
-
-2. Kopieer/verplaats alle nodige files
-
-Terug in de root:
+1. bouw website & Kopieer/verplaats alle nodige files
 
 ```sh
 ./publish.sh
 ```
 
-3. Naar CPanel gaan en inloggen > Geavanceerd > Terminal
+2. Publish to git
+
+```sh
+cd ksadebiekorf.be-dist
+git add .
+git commit -m "version number"
+git push
+```
+
+3. Site testen
+
+```
+py -m http.server
+```
+
+4. Naar CPanel gaan en inloggen > Geavanceerd > Terminal
 
 In de terminal:
 
@@ -32,6 +38,6 @@ $ git pull origin master
 Enter passphrase for key '...': # Nu moet je het wachtwoord ingeven van de ssh key (vraag hiernaar)
 ```
 
-4. Controleer de website
+5. Controleer de website
 
 Controleer of alles nog werkt op [ksadebiekorf.be](https://ksadebiekorf.be)

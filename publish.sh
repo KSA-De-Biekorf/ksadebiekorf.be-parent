@@ -5,20 +5,34 @@
 
 set -e
 
-if [[ $1 == "" ]]; then
-  echo "Missing commit message"
-  exit
-fi
+# if [[ $1 == "" ]]; then
+#   echo "Missing commit message"
+#   exit
+# fi
+
+# Build website
+cd ksadebiekorf.be
+pnpm run build
 
 # Publish website
-cd ksadebiekorf.be
 ./publish.sh
 
 # Copy .htaccess file
 cd ..
 cp staticFiles/.htaccess ksadebiekorf.be-dist
 
+# Generate error pages
+ruby generate_error_pages.rb
+
+# Copy dashboard
 cd ksadebiekorf.be-dist
-git add .
-git commit -m "$1"
-git push
+mkdir -p cgi-bin/mails
+chmod 755 cgi-bin
+chmod 644 cgi-bin/**/*
+# cp ../mailingdashboard cgi-bin/mails
+
+# Git push
+# cd ksadebiekorf.be-dist
+# git add .
+# git commit -m "$1"
+# git push

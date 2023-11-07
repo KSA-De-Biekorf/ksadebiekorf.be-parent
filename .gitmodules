@@ -5,3 +5,7 @@
 [submodule "ksadebiekorf.be-dist"]
 	path = "ksadebiekorf.be-dist"
 	url = https://github.com/KSA-De-Biekorf/ksadebiekorf.be-dist
+
+[submodule "MailingDashboard"]
+	path = "mailingdashboard"
+	url = "https://github.com/KSA-De-Biekorf/MailingDashboard.git"
