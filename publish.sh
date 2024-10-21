@@ -5,6 +5,8 @@
 
 set -e
 
+NPM="${NPM:-bun}" # can be npm, pnpm, bun, etc.
+
 # if [[ $1 == "" ]]; then
 #   echo "Missing commit message"
 #   exit
@@ -12,7 +14,7 @@ set -e
 
 # Build website
 cd ksadebiekorf.be
-pnpm run build
+$NPM run build
 
 # Publish website
 ./publish.sh
